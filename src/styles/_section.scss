@@ -1,0 +1,16 @@
+.App {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card {  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: wheat;
+  border: 2px solid darkgrey;
+  box-shadow: 2px 0px 20px 2px grey;
+}
