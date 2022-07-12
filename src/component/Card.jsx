@@ -13,21 +13,20 @@ class Card extends React.Component {
   }
 
   render() {
-    const {id, url, photographer, src, alt} = this.props.image;
+    const {id, url, photographer, src, alt} = this.props;
 
     return (
       <div className="Cards">
         <img 
           url={url}
-          src={src}
+          src={src.medium}
           alt={alt}
         />
-      <p>
-        id={id}
-      </p>
-      <p>
-        photographer={photographer}
-      </p>
+        <div className="card__overlay">
+          <div className="card__title">
+
+          </div>
+        </div>
       </div>
     )
   }

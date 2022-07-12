@@ -1,4 +1,4 @@
-const handleClick(event) => {
+const handleClick = (event) => {
   console.log('event', event);
 }
 

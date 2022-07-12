@@ -1,10 +1,12 @@
 import React from "react";
+import Card from "./Card";
 
 class List extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      data: []
+      data: {},
+      loading: false
     }
     // this.makeRequest()
   }
@@ -17,8 +19,8 @@ class List extends React.Component {
   }
 })
    .then (response => response.json ())
-   .then (data => console.log( data.photos ))
-   .catch( error => console.log( error ) )
+   .then (data => this.setState({data: data}))
+   .catch( error => console.log( error ));
   }
 
   componentDidMount() {
@@ -26,12 +28,17 @@ class List extends React.Component {
   }
 
   render() {
+    const { data } = this.state;
+
     return (
-      <ul>
-
-
-
-      </ul>
+      <div>
+        {
+          data.photos && data.photos.map(photo => (
+          <li key={photo.id}>
+            <img src={photo.src.medium} alt={photo.alt} />
+          </li>))
+        }
+      </div>
     )
   }
 }
